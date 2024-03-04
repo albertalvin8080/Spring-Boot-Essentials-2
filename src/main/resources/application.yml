@@ -10,6 +10,8 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      initialization-fail-timeout: -1 # prevents the app from crashing when not able to connect to db (not recommended in production)
   jpa:
 #    show-sql: true # use 'logging: level:' for better performance
     hibernate:
