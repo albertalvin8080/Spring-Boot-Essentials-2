@@ -16,7 +16,7 @@ git clone https://github.com/AlbertAlvin8080/Spring-Boot-Essentials-2.git
 ```
 
 ```bash
- cd Spring-Boot-Essentials-2
+cd Spring-Boot-Essentials-2
 ```
 
 ## Running the app
@@ -45,4 +45,4 @@ Grafana is at:
 http://localhost:3000
 ```
 
-You can use them to see metadata related to the running Spring app.
+You can use them to see metadata related to the Spring app.
