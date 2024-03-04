@@ -30,7 +30,7 @@ Put this address into your browser (Username = albert, Password = 1234):
 http://localhost:8080/swagger-ui/index.html
 ```
 
-Now try to do some requests.
+Now try to make some requests.
 
 ## Other functionalities
 Prometheus is running at:
