@@ -51,6 +51,10 @@ services:
       - "8080:8080"
     environment:
       <<: *database-variables
+    depends_on:
+      - mysql1
+      - prometheus
+      - grafana
     mem_limit: 512m
 
 # docker-compose up -d --build
