@@ -64,8 +64,8 @@ public class SecurityConfig {
         log.info("password: {}", passwordEncoder.encode("1234"));
 
         final UserDetails user1 = User
-                .withUsername("lucas")
-                .password(passwordEncoder.encode("lucas"))
+                .withUsername("albert")
+                .password(passwordEncoder.encode("1234"))
                 .roles("ADMIN", "USER")
                 .build();
 
