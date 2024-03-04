@@ -1,0 +1,30 @@
+#server:
+#  error:
+#    include-stacktrace: on_param
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+#    username: root
+#    password: root
+
+  jpa:
+#    show-sql: true # use 'logging: level:' for better performance
+    hibernate:
+      ddl-auto: update
+
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+#        type: TRACE # show parameters (in theory)
+        show_sql: false # use 'logging: level:' for better performance
+        format_sql: true # formats even if 'show_sql' is false
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+#        type: TRACE # show parameters (in theory)
+

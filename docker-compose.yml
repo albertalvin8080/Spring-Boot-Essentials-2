@@ -1,0 +1,58 @@
+version: "2.4"
+
+x-database-variables: &database-variables
+  SPRING_DATASOURCE_URL: jdbc:mysql://mysql1:3306/db_test?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+  SPRING_DATASOURCE_USER: root
+  SPRING_DATASOURCE_PASSWORD: root
+
+services:
+  mysql1:
+    image: mysql:8.0.36-debian
+    container_name: mysql1
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_test
+      # MYSQL_USER: albert
+      # MYSQL_PASSWORD: 1234
+    volumes:
+      - ./docker-data/mysql-data:/var/lib/mysql
+    command:
+      [ "mysqld", "--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci" ]
+    mem_limit: 512m
+
+  prometheus:
+    image: prom/prometheus:v2.50.1
+    container_name: prometheus
+    volumes:
+      - ./docker-data/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      [ "--config.file=/etc/prometheus/prometheus.yml" ]
+    ports:
+      - "9090:9090"
+    mem_limit: 128m
+
+  grafana:
+    image: grafana/grafana:10.2.4
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./docker-data/grafana-storage:/var/lib/grafana
+      - ./docker-data/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+    mem_limit: 128m
+
+  spring-boot-app:
+    image: albertalvin/spring-boot-essentials-2
+    container_name: spring-boot-app
+    ports:
+      - "8080:8080"
+    environment:
+      <<: *database-variables
+    mem_limit: 512m
+
+# docker-compose up -d --build
+# docker-compose exec -it db bash
+# mysql -proot

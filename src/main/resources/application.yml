@@ -1,0 +1,43 @@
+server:
+  error:
+    include-stacktrace: on_param
+
+spring:
+  application:
+    name: spring-boot-essentials-2
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_test?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+#    show-sql: true # use 'logging: level:' for better performance
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        type: TRACE # show parameters (in theory)
+        show_sql: false # use 'logging: level:' for better performance
+        format_sql: true # formats even if the 'show_sql' is false
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type: TRACE # show parameters (in theory)
+
+management:
+  info:
+    env:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+#        include: "*" # everything
+        include: health, info, metrics, prometheus
+
+info:
+  app: Spring Boot Starter Test
+  author: Albert Alvin
