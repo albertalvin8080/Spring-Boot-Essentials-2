@@ -29,7 +29,7 @@ Put this address into your browser:
 ```bash
 http://localhost:8080/swagger-ui/index.html
 ```
-Username: albert
+Username: albert<br>
 Password: 1234
 
 Now try to do some requests.
@@ -45,4 +45,4 @@ Grafana is at:
 http://localhost:3000
 ```
 
-You can use them to see metadata related to the Spring app.
+You can use them to see metadata related to the running Spring app.
