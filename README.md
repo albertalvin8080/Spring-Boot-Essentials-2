@@ -25,7 +25,9 @@ Run this docker command in the folder where the docker-compose file is located:
 docker-compose up --build
 ```
 
-Put this address into your browser (Username = albert, Password = 1234):
+Put this address into your browser:
+- Username: albert
+- Password: 1234
 ```bash
 http://localhost:8080/swagger-ui/index.html
 ```
