@@ -2,10 +2,7 @@
 This repository was created with the purpose of testing and learning about Spring Boot.
 
 ## Used Course
-All the code in this repository (apart from some deprecated instances which were adapted to the most rencent version of Spring Boot in 2024) can be replicated by watching this course:
-```bash
-https://youtube.com/playlist?list=PL62G310vn6nFBIxp6ZwGnm8xMcGE3VA5H&si=m0bq-nTYjjGHUywE
-```
+All the code in this repository (apart from some deprecated instances which were adapted to the most rencent version of Spring Boot in 2024) can be replicated by watching [this course](https://youtube.com/playlist?list=PL62G310vn6nFBIxp6ZwGnm8xMcGE3VA5H&si=m0bq-nTYjjGHUywE).
 
 ## Credits
 _Spring Boot Essentials 2_ is a free course created by William Suane, owner of the YouTube channel [DevDojo](https://www.youtube.com/@DevDojoBrasil). All credits to him.
